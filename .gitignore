@@ -17,9 +17,11 @@ target
 rustc-ice-*.txt
 
 # Executables left in source folders by running `rustc <file>.rs` directly there.
-# They have no extension, so keep only Rust sources inside src/ directories.
-**/src/*
-!**/src/*.rs
+# They have no extension, so ignore everything under src/ and then re-include
+# directories (so git still descends into them) and Rust sources at any depth.
+**/src/**
+!**/src/**/
+!**/src/**/*.rs
 
 # RustRover
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
