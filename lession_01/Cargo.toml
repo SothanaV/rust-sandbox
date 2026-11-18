@@ -2,5 +2,11 @@
 name = "lession_01"
 version = "0.1.0"
 edition = "2024"
+# Keeps `cargo run` pointing at src/main.rs now that src/bin/ adds the lesson bins.
+default-run = "lession_01"
 
 [dependencies]
+
+[[bin]]
+name = "lession_01"
+path = "src/main.rs"
