@@ -16,6 +16,11 @@ target
 # rustc will dump stack traces when hitting an internal compiler error to PWD
 rustc-ice-*.txt
 
+# Executables left in source folders by running `rustc <file>.rs` directly there.
+# They have no extension, so keep only Rust sources inside src/ directories.
+**/src/*
+!**/src/*.rs
+
 # RustRover
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
 #  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
